@@ -1,0 +1,10 @@
+.page-content {
+    margin-top: 2rem;
+    text-align: left;
+  }
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}

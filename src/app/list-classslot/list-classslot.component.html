@@ -1,0 +1,24 @@
+<div class="container page-content">
+    <div class='table-responsive'>
+        <div class="col-sm-6 col-md"></div>
+        <div class='table-header'>
+            <tr><th style="font-size:24px">{{pageTitle}}</th></tr>
+        </div>
+        <table class='table' *ngIf='classslots && classslots.length'>
+            <thead>
+                <tr>
+                    <th style="text-align:left">Link</th>
+                    <th style="text-align:left">Lifeguard</th>
+                    <th style="text-align:left">IdClass</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let classslot of classslots'>
+                    <td style="text-align:left"> <a [routerLink]="['/list-swimmers',classslot.idclass,classslot.title + '-' + classslot.location + '-' + classslot.daytime + '-' + classslot.coach + '-' + classslot.grade + classslot.descript]">{{ classslot.coach }}-{{ classslot.grade }}{{ classslot.descript }} </a></td>
+                    <td style="text-align:left">{{ classslot.lifeguard }} </td>
+                    <td style="text-align:left">{{ classslot.idclass }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>

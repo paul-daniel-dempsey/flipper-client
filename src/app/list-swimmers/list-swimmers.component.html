@@ -1,0 +1,57 @@
+<div class="container page-content">
+    <div class='table-responsive'>
+        <div class="col-sm-6 col-md"></div>
+        <div class='table-header'>
+            <tr><th style="font-size:24px">{{pageTitle}}</th></tr>
+        </div>
+        <table class='table' *ngIf='swimmers && swimmers.length'>
+            <thead>
+                <tr>
+                    <th style="text-align:left">Name</th>
+                    <th style="text-align:left">AdultChild</th>
+                    <th style="text-align:left">IdSwimmer</th>
+                    <th style="text-align:left">IdFamily</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let swimmer of swimmers;index as idswimmer'>
+                  <td style="text-align:left">{{ swimmer.firstname }} {{ swimmer.surname }}</td>
+                  <td style="text-align:left">{{ swimmer.adultchild }} </td>
+                  <td style="text-align:left">{{ swimmer.idswimmer }}</td>
+                  <td style="text-align:left">{{ swimmer.idfamily }} </td>
+                  <td style="text-align:left"><button class="btn btn-primary" (click)="editSwimmer(idswimmer, swimmermodal)"><i class="fa fa-edit"></i></button></td>
+                  <td style="text-align:left"><button class="btn btn-danger" (click)="deleteSwimmer(idswimmer)"><i class="fa fa-trash"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #swimmermodal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Swimmer {{modalTitle}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="form" (ngSubmit)="updateSwimmer()">
+      <div class="form-group full-width-input">
+        <label>FirstName</label>
+        <input class="form-control" formControlName="firstname">
+      </div>
+      <div class="form-group full-width-input">
+          <label>SurName</label>
+          <input class="form-control" formControlName="surname">
+        </div>
+      <div class="form-group full-width-input">
+          <label>AdultChild</label>
+          <input class="form-control" formControlName="adultchild">
+      </div>
+      <div class="button-row">
+        <button type="button" class="btn btn-primary" (click)="modalCallback()">Submit</button>
+        <button type="button" class="btn btn-light" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

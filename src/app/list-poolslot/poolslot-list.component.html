@@ -1,0 +1,26 @@
+<div class="container page-content">
+    <div class='table-responsive'>
+        <div class="col-sm-6 col-md"></div>
+        <div class='table-header'>
+            <tr><th style="font-size:24px">{{pageTitle}}</th></tr>
+        </div>
+        <table class='table' *ngIf='poolslots && poolslots.length'>
+            <thead>
+                <tr>
+                    <th style="text-align:left">Pool-Time</th>
+                    <th style="text-align:left">Capacity</th>
+                    <th style="text-align:left">Lifeguard</th>
+                    <th style="text-align:left">IdPoolSlot</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let poolslot of poolslots'>
+                    <td style="text-align:left"><a [routerLink]="['/list-classslot',poolslot.idpoolslot, poolslot.title + '-' + poolslot.location + '-' + poolslot.daytime]">{{ poolslot.location }}-{{ poolslot.daytime }} </a></td>
+                    <td style="text-align:left">{{ poolslot.capacity }} </td>
+                    <td style="text-align:left">{{ poolslot.lifeguard }} </td>
+                    <td style="text-align:left">{{ poolslot.idpoolslot }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
