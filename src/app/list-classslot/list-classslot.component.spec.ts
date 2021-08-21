@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListClassslotComponent } from './list-classslot.component';
+import { ListComponent_Classslot } from './list-classslot.component';
 
-describe('ListClassslotComponent', () => {
-  let component: ListClassslotComponent;
-  let fixture: ComponentFixture<ListClassslotComponent>;
+describe('ListComponent_Classslot', () => {
+  let component: ListComponent_Classslot;
+  let fixture: ComponentFixture<ListComponent_Classslot>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListClassslotComponent ]
+      declarations: [ ListComponent_Classslot ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListClassslotComponent);
+    fixture = TestBed.createComponent(ListComponent_Classslot);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
